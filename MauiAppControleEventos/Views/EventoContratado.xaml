@@ -13,9 +13,18 @@
                    TextColor="White"
                    FontFamily="Kalam" 
                    FontSize="30"
-                       FontAttributes="Bold"
+                   FontAttributes="Bold"
                    HorizontalTextAlignment="Center"/>
-                <Label Margin="10"
+                <Label 
+                    
+                    Text="Local:"
+                    TextColor="Red"
+                    FontFamily="Kalam"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"/>
+                <Label
+                    Margin="10"
                        Padding="10"
                        Text="{Binding LocalEvento}"
                        TextColor="White"
