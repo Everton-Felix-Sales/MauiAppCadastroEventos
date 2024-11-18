@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppControleEventos.Views.EventoContratado"
+            NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Grid>
+            <Image Source="final.jpg" />
+            <VerticalStackLayout >
+                <Label Margin="10"
+                   Padding="10"
+                   Text="{Binding Nome}"
+                   TextColor="White"
+                   FontFamily="Kalam" 
+                   FontSize="30"
+                       FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+                <Label Margin="10"
+                       Padding="10"
+                       Text="{Binding LocalEvento}"
+                       TextColor="White"
+                       FontFamily="Kalam"
+                       FontAttributes="Bold"
+                       FontSize="30"
+                       HorizontalTextAlignment="Center"/>
+
+
+                <Frame BackgroundColor="#80FFFFFF"
+                   Opacity="1.0"
+                   BorderColor="#00FFFFFF"
+                   Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Grid ColumnDefinitions="*, *, *, *, *">
+                            <!-- Primeira Coluna: Quantidade de Participantes -->
+                            <Label Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" FontAttributes="Bold" FontSize="15" TextColor="Black" FontFamily="Rubik" Text="Quantidade de Participantes: " />
+                            <Label Grid.Row="0" Grid.Column="1" FontSize="20" FontAttributes="Bold" FontFamily="Rubik" Text="{Binding QntParticipantes}" TextColor="Red" />
+
+                            <!-- Espaço na Coluna 2 -->
+                            <BoxView Grid.Row="0" BackgroundColor="#00FFFFFF" Grid.Column="2" WidthRequest="20" />
+
+                            <!-- Quarta Coluna: Valor -->
+                            <Label Grid.Row="0" Grid.Column="3" Margin="0,0,10,0" FontAttributes="Bold" FontSize="15" TextColor="Black" FontFamily="Rubik" Text="Valor:" />
+                            <Label Grid.Row="0" Grid.Column="4" FontSize="20" FontAttributes="Bold" FontFamily="Rubik" Text="{Binding ValorParticipante, StringFormat='{}{0:c}'}" TextColor="Red" />
+                        </Grid>
+                    </StackLayout>
+
+                </Frame>
+
+                <Frame    BackgroundColor="#90FFFFFF" BorderColor="#00FFFFFF" Margin="10">
+                    <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="Auto, Auto">
+                        <Label FontSize="15" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Text="Início:"  FontFamily="Rubik" />
+                        <Label FontSize="15" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Text="Fim:"  FontFamily="Rubik" />
+                        <Label FontSize="15" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" Text="Dias:"   FontFamily="Rubik"/>
+
+                        <Label FontFamily="Rubik" 
+                               FontAttributes="Bold" Grid.Row="1" Grid.Column="0" 
+                           Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}"
+                           TextColor="Red" />
+
+                        <Label FontFamily="Rubik" 
+                               FontAttributes="Bold" FontSize="15" Grid.Row="1" Grid.Column="1" 
+                           Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}"
+                           TextColor="Red" />
+
+                        <Label   FontFamily="Rubik" FontSize="15" Grid.Row="1" Grid.Column="2" 
+                               FontAttributes="Bold"
+                             Text="{Binding Estadia}"
+                             TextColor="Red"/>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="#99FFFFFF" BorderColor="#00FFFFFF" Margin="10">
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Label FontSize="20"
+                               FontAttributes="Bold"
+                           FontFamily="Rubik" Text="Valor Total: " />
+                        <Label FontSize="20"
+                               FontAttributes="Bold"
+                           FontFamily="Rubik" Text="{Binding ValorTotal, StringFormat='{}{0:c}'} "
+                           TextColor="Red"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+
+            </VerticalStackLayout>
+
+
+        </Grid>
+
+
+    </VerticalStackLayout>
+</ContentPage>

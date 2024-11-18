@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppControleEventos.Views.ContratacaoEvento"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout >
+        <Grid>
+            <Image
+                Source="paginit.jpg"/>
+            <VerticalStackLayout >
+                <Label 
+                    Margin="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Cadastro de Eventos"
+                    FontSize="30"
+                    FontFamily="Kalam"
+                    TextColor="Red"
+                    FontAttributes="Bold"/>
+
+                <Frame CornerRadius="50"
+                    BackgroundColor="#00FFFFFF"
+                    Opacity="2.0"
+                    BorderColor="#00FFFFFF" Padding="10">
+                    <VerticalStackLayout BackgroundColor="#80FFFFFF"
+                    Opacity="1.0"
+                    >
+                        <Frame CornerRadius="50"
+                            BackgroundColor="#00FFFFFF"
+                               Opacity="1.0"
+                               BorderColor="#00FFFFFF"
+                               Padding="10" Margin="10">
+                            <VerticalStackLayout 
+                                BackgroundColor="#80FFFFFF"
+                                Opacity="1.0" >
+                                <Label 
+                                  Text="Nome"
+                                  FontFamily="Rubik"
+                                  FontSize="12"
+                                  FontAttributes="Bold"
+                                  Padding="10"/>
+                                <Entry
+                                    x:Name="txt_nome"
+                                    FontFamily="Rubik"
+                                    FontSize="Subtitle"
+                                    TextColor="Black">
+
+                                </Entry>
+                                <Label 
+                                    Text="Endereço"
+                                    FontFamily="Rubik"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    Padding="10"/>
+                                <Entry
+                                    x:Name="txt_local"
+                                    FontFamily="Rubik"
+                                    FontSize="Subtitle"
+                                    TextColor="Black">
+
+                                </Entry>
+
+                                <Label 
+                                    Text="Valor da Entrada"
+                                    FontFamily="Rubik"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    Padding="10"/>
+                                <Entry 
+                                    FontFamily="Rubik"
+                                    TextColor="Red"
+                                    x:Name="txt_valor" 
+                                    Placeholder="R$ " 
+                                    FontAttributes="Bold"
+                                    PlaceholderColor="Black"
+                                    VerticalOptions="End"
+                                    HorizontalOptions="Fill"/>
+                                
+                                <Label 
+                                    Text="Quantidade de Participantes"
+                                    FontFamily="Rubik"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    Padding="10"/>
+                                <Entry 
+                                    FontFamily="Rubik"
+                                    TextColor="Red"
+                                    x:Name="txt_qntParticipante" 
+                                    FontAttributes="Bold"
+                                    VerticalOptions="End"
+                                    HorizontalOptions="Fill"/>
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame BackgroundColor="#80FFFFFF"
+                           Opacity="1.0"
+                           BorderColor="#00FFFFFF"
+                           Padding="10"
+                           Margin="10">
+                            <VerticalStackLayout 
+                            BackgroundColor="#00FFFFFF"
+                            Opacity="1.0"
+                            Spacing="10">
+
+                                <Label
+                                   HorizontalTextAlignment="Center"
+                                   Text="Período do Evento"
+                                   TextTransform="Uppercase"
+                                   FontFamily="Rubik"
+                                   FontSize="Subtitle"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"/>
+
+                                <VerticalStackLayout>
+                                    <Grid ColumnDefinitions="*,*">
+                                        <HorizontalStackLayout HorizontalOptions="Start">
+                                            <Label 
+                                                VerticalTextAlignment="Center"
+                                                Text="Início:"
+                                                FontFamily="Rubik"
+                                                FontAttributes="Bold"/>
+                                            <DatePicker x:Name="dtpck_checkin"
+                                                DateSelected="dtpck_checkin_DateSelected"
+                                                Format="dd/MM/yyyy" />
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout HorizontalOptions="End"
+                                                               Grid.Column="1">
+                                            <Label 
+                                                VerticalTextAlignment="Center"
+                                                Text="Final:"
+                                                FontFamily="Rubik"
+                                                FontAttributes="Bold"/>
+                                            <DatePicker x:Name="dtpck_checkout"
+                                                        Format="dd/MM/yyyy" />
+                                        </HorizontalStackLayout>
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Button 
+                            Opacity="1.0"
+                            BorderColor="#00FFFFFF"
+                            Text="CADASTRAR" TextColor="Black"
+                            FontFamily="Rubik" 
+                            FontSize="Medium"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#FF0000"/>
+
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
